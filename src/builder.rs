@@ -26,6 +26,15 @@ impl ThreadPoolBuilder {
             builder: self.builder.num_threads(threads_number),
         }
     }
+    
+    /// Set a steal function, see https://github.com/ma1ko/rayon/commit/78c551f105badc590a1ae6be7cddb3094663f4eb
+    pub fn steal_callback<H>(mut self, steal_callback: H) -> Self
+    where
+        H: Fn(usize) -> Option<()> + Send + Sync + 'static,
+    {
+        self.builder = self.builder.steal_callback(steal_callback);
+        self
+    }
 
     /// Build the `ThreadPool`.
     pub fn build(self) -> Result<ThreadPool, ThreadPoolBuildError> {
