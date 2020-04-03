@@ -30,4 +30,4 @@ x86={version="^0.19", optional=true}
 perfcnt={version="^0.5", optional=true}
 
 [dev-dependencies]
-criterion={path="../criterion.rs"}
+criterion={git = "https://github.com/ma1ko/criterion.rs"}
