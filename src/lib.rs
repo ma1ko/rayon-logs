@@ -44,6 +44,7 @@
 //! </div>
 #![type_length_limit = "2097152"] // it seems we have types with long names
 #![deny(missing_docs)]
+#![allow(deprecated,dead_code)]
 #![warn(clippy::all)]
 
 mod pool; // this comes first because it exports the logs macro

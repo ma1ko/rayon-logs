@@ -19,7 +19,7 @@ perf = ["perfcnt", "x86"]
 
 [dependencies]
 lazy_static = "^1.4"
-rayon="^1"
+rayon= {git = "https://github.com/ma1ko/rayon"}
 serde="^1"
 serde_json="^1"
 serde_derive="^1"
@@ -30,4 +30,4 @@ x86={version="^0.19", optional=true}
 perfcnt={version="^0.5", optional=true}
 
 [dev-dependencies]
-criterion="^0.2"
+criterion={path="../criterion.rs"}
